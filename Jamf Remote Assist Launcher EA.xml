@@ -5,13 +5,13 @@
 <scriptContentsMac>#!/bin/bash&#13;
 &#13;
 &#13;
-##################################################################&#13;
+####################################################################&#13;
 #.DESCRIPTION&#13;
 #   Detect if Jamf Remote Assist Launcher is installed&#13;
 #&#13;
 #.NOTES&#13;
 #   The script when executed checks if the Jamf Remote Assist&#13;
-#	binary exists in the "jamfRemoteAssistLauncher" folder&#13;
+#	Launcher binary exists in the "jamfRemoteAssistLauncher" folder&#13;
 #&#13;
 #&#13;
 #.FILEINFO&#13;
@@ -19,7 +19,7 @@
 #  Creation Date:   01/08/2024&#13;
 #  Purpose/Change:  Initial script development&#13;
 #&#13;
-#################################################################&#13;
+###################################################################&#13;
 &#13;
 &#13;
 jamfRemoteAssistLauncher="/Library/Application Support/JAMF/Remote Assist/jamfRemoteAssistLauncher"&#13;
