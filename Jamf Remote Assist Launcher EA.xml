@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Jamf RA Launcher</displayName>
+<description>This EA will detect if Jamf Remote Assist Launcher binary exists on the user computer and returns "Installed" if the binary exists or "Not installed" if it does not exist</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+&#13;
+&#13;
+##################################################################&#13;
+#.DESCRIPTION&#13;
+#   Detect if Jamf Remote Assist Launcher is installed&#13;
+#&#13;
+#.NOTES&#13;
+#   The script when executed checks if the Jamf Remote Assist&#13;
+#	binary exists in the "jamfRemoteAssistLauncher" folder&#13;
+#&#13;
+#&#13;
+#.FILEINFO&#13;
+#  Author:          Lloyd&#13;
+#  Creation Date:   01/08/2024&#13;
+#  Purpose/Change:  Initial script development&#13;
+#&#13;
+#################################################################&#13;
+&#13;
+&#13;
+jamfRemoteAssistLauncher="/Library/Application Support/JAMF/Remote Assist/jamfRemoteAssistLauncher"&#13;
+&#13;
+&#13;
+if [[ -e "$jamfRemoteAssistLauncher" ]]; then&#13;
+	echo "&lt;result&gt;Installed&lt;/result&gt;"&#13;
+else&#13;
+	echo "&lt;result&gt;Not Installed&lt;/result&gt;"&#13;
+fi&#13;
+</scriptContentsMac>
+</extensionAttribute>
