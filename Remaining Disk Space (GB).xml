@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Remaining Disk Space (GB)</displayName>
+<description/>
+<dataType>number</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+&#13;
+&#13;
+####################################################################&#13;
+#.DESCRIPTION&#13;
+#   Detect Remaining Disk space (GB) on /System/Volumes/Data using&#13;
+#   df binary and return integer only&#13;
+#&#13;
+#.NOTES&#13;
+#   The script when executed displays information about the disk&#13;
+#	space usage on the file system where "/System/Volumes/Data" is&#13;
+#	located in human readable format. This is then piped to awk to&#13;
+#	process the output, tail to retrieve the last line, then return&#13;
+#	it to getFreeDiskSpace variable.&#13;
+#&#13;
+#	freeDiskSpace=${getFreeDiskSpace%G}: This line removes the&#13;
+#	trailing "G" (indicating gigabytes) from the value stored in&#13;
+#	getFreeDiskSpace. The %G is a shell parameter expansion that&#13;
+#	removes the specified suffix from the variable's value.&#13;
+#	&#13;
+#&#13;
+#&#13;
+#.FILEINFO&#13;
+#  Author:          Lloyd&#13;
+#  Creation Date:   01/24/2024&#13;
+#  Purpose/Change:  Initial script development&#13;
+#&#13;
+###################################################################&#13;
+&#13;
+getFreeDiskSpace=$(df -H /System/Volumes/Data/ | awk '{print $4}' | tail -n 1)&#13;
+freeDiskSpace=${getFreeDiskSpace%G}&#13;
+&#13;
+echo "&lt;result&gt;"$freeDiskSpace"&lt;/result&gt;"</scriptContentsMac>
+</extensionAttribute>
